@@ -132,31 +132,31 @@ import java.util.concurrent.*;
 //}
 
 //定时器调度池
-class MyThread implements Runnable{
-    @Override
-    public void run() {
-        for (int i=0;i<10;i++){
-            System.out.println("当前线程"+Thread.currentThread().getName()
-                    +"执行"+i+"次");
-        }
-    }
-}
-public class Test {
-    public static void main(String[] args) throws InterruptedException {
-        //实例化对象
-        MyThread myThread=new MyThread();
-
-        ScheduledExecutorService scheduledExecutorService=
-                Executors.newScheduledThreadPool(3);
-        for (int i=0;i<5;i++){
-            //延迟两秒执行
-            //scheduledExecutorService.schedule(myThread,
-             //      2000,TimeUnit.MILLISECONDS);
-            //延迟两秒执行且每隔三秒执行一次
-            scheduledExecutorService.scheduleAtFixedRate(myThread,
-                   2000,3000,TimeUnit.MILLISECONDS);
-        }
-        //关闭线程池
-        scheduledExecutorService.shutdown();
-    }
-}
+//class MyThread implements Runnable{
+//    @Override
+//    public void run() {
+//        for (int i=0;i<10;i++){
+//            System.out.println("当前线程"+Thread.currentThread().getName()
+//                    +"执行"+i+"次");
+//        }
+//    }
+//}
+//public class Test {
+//    public static void main(String[] args) throws InterruptedException {
+//        //实例化对象
+//        MyThread myThread=new MyThread();
+//
+//        ScheduledExecutorService scheduledExecutorService=
+//                Executors.newScheduledThreadPool(3);
+//        for (int i=0;i<5;i++){
+//            //延迟两秒执行
+//            //scheduledExecutorService.schedule(myThread,
+//             //      2000,TimeUnit.MILLISECONDS);
+//            //延迟两秒执行且每隔三秒执行一次
+//            scheduledExecutorService.scheduleAtFixedRate(myThread,
+//                   2000,3000,TimeUnit.MILLISECONDS);
+//        }
+//        //关闭线程池
+//        scheduledExecutorService.shutdown();
+//    }
+//}
